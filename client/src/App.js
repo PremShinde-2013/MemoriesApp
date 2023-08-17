@@ -21,23 +21,24 @@ const App = () => {
     <Container maxWidth='lg'>
       <AppBar className={classes.appBar} position='static' color='inherit'>
         <Typography className={classes.heading} variant='h2' align='center'>
-          Chat app
+          Memo_App
         </Typography>
-        <img className={classes.image} src={logo} alt='memories' height={60} />
+        <img className={classes.image} src={logo} alt='memories' height='60' />
       </AppBar>
       <Grow in>
         <Container>
           <Grid
+            className={classes.mainContainer}
             container
             justifyContent='space-between'
             alignItems='stretch'
             spacing={3}
           >
             <Grid item xs={12} sm={7}>
-              <Posts />
+              <Posts setCurrentId={setCurrentId} />
             </Grid>
             <Grid item xs={12} sm={4}>
-              <Form />
+              <Form currentId={currentId} setCurrentId={setCurrentId} />
             </Grid>
           </Grid>
         </Container>
